@@ -30,16 +30,22 @@ const posts = [
 
 export function Journal() {
   return (
-    <section className="bg-parchment py-24 lg:py-32">
+    <section id="journal" className="bg-parchment py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-wrap justify-between items-end mb-14 gap-6">
           <div>
             <p className="font-jp italic text-gold mb-3">私たちの物語</p>
             <h2 className="font-display text-4xl md:text-5xl text-ink">Our Sushi Journal</h2>
           </div>
-          <a href="#" className="text-red-accent font-medium inline-flex items-center gap-2 uppercase text-sm tracking-wider">
+          <button
+            onClick={() => {
+              const el = document.getElementById("journal");
+              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+            className="text-red-accent font-medium inline-flex items-center gap-2 uppercase text-sm tracking-wider"
+          >
             More Articles <ArrowRight className="w-4 h-4" />
-          </a>
+          </button>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
