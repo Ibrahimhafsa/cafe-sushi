@@ -10,7 +10,7 @@ import { Gallery } from "@/components/Gallery";
 import { Testimonials } from "@/components/Testimonials";
 import { Journal } from "@/components/Journal";
 import { Footer } from "@/components/Footer";
-import { ReservationSideButton } from "@/components/ReservationSideButton";
+import { Toaster } from "sonner";
 
 export const Route = createFileRoute("/")({
   head: () => ({
