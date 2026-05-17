@@ -50,7 +50,14 @@ export function PopularDelights() {
                   <span className="text-red-accent font-display text-xl">{d.price}</span>
                 </div>
                 <p className="text-muted-ink text-sm leading-relaxed mb-4">{d.desc}</p>
-                <button className="opacity-0 group-hover:opacity-100 transition-opacity btn-red px-5 py-2 rounded-full text-xs uppercase tracking-wider">
+                <button
+                  onClick={() =>
+                    toast.success("Added to cart!", {
+                      style: { background: "#D62828", color: "#fff", border: "none" },
+                    })
+                  }
+                  className="opacity-0 group-hover:opacity-100 transition-opacity btn-red px-5 py-2 rounded-full text-xs uppercase tracking-wider"
+                >
                   Add to Cart
                 </button>
               </div>
