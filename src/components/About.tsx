@@ -38,7 +38,7 @@ export function About() {
             crafted with precision, authenticity, and a modern touch.
           </p>
           <p className="text-muted-ink leading-relaxed mb-8">
-            At Sakura House, every roll is made fresh to order using the highest
+            At Cafe Sushi, every roll is made fresh to order using the highest
             quality fish sourced daily from Billingsgate Market. We are inspired by
             the rich culinary traditions of Japan, adapted for London dining at its
             very best.
