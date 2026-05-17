@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 const dishes = [
   { name: "Rainbow Roll", desc: "Crab, avocado, cucumber topped with tuna, salmon, and yellowtail", price: "£14.50", img: "https://images.unsplash.com/photo-1617196034096-2186592bdb7e?w=600" },
