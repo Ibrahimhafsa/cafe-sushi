@@ -1,26 +1,54 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { Marquee } from "@/components/Marquee";
+import { PopularDelights } from "@/components/PopularDelights";
+import { CtaBanner } from "@/components/CtaBanner";
+import { BestDishes } from "@/components/BestDishes";
+import { Gallery } from "@/components/Gallery";
+import { Testimonials } from "@/components/Testimonials";
+import { Journal } from "@/components/Journal";
+import { Footer } from "@/components/Footer";
+import { ReservationSideButton } from "@/components/ReservationSideButton";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Sakura House — Finest Japanese Sushi in London" },
+      {
+        name: "description",
+        content:
+          "Sakura House is London's premier Japanese restaurant. Handcrafted sushi, fresh daily fish, and authentic flavours on Exmouth Market.",
+      },
+      { property: "og:title", content: "Sakura House — Finest Japanese Sushi in London" },
+      {
+        property: "og:description",
+        content:
+          "Handcrafted sushi, sashimi and Asian cuisine in the heart of London. Book your table at Sakura House.",
+      },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1600" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="bg-cream">
+      <Navbar />
+      <Hero />
+      <About />
+      <Marquee />
+      <PopularDelights />
+      <CtaBanner />
+      <BestDishes />
+      <Gallery />
+      <Testimonials />
+      <Journal />
+      <div id="reservation" />
+      <Footer />
+      <ReservationSideButton />
+    </main>
+  );
 }
