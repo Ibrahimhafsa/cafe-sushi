@@ -46,9 +46,8 @@ function Index() {
       <Gallery />
       <Testimonials />
       <Journal />
-      <div id="reservation" />
       <Footer />
-      <ReservationSideButton />
+      <Toaster position="bottom-right" />
     </main>
   );
 }
