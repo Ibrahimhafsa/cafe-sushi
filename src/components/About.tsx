@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { scrollToId } from "@/lib/scroll";
+import { useNavigate } from "@tanstack/react-router";
 
 export function About() {
+  const navigate = useNavigate();
+
   return (
     <section id="about" className="bg-cream py-24 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 wave-pattern pointer-events-none" />
@@ -16,7 +18,7 @@ export function About() {
         >
           <div className="absolute -bottom-5 -left-5 w-32 h-32 bg-red-accent z-0" />
           <img
-            src="https://images.unsplash.com/photo-1617196034096-2186592bdb7e?w=700"
+            src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600"
             alt="Sushi platter on slate board"
             loading="lazy"
             className="relative z-10 rounded-lg shadow-2xl w-full h-[500px] object-cover"
@@ -43,7 +45,7 @@ export function About() {
             the rich culinary traditions of Japan, adapted for London dining at its
             very best.
           </p>
-          <button onClick={() => scrollToId("about")} className="border-2 border-red-accent text-red-accent px-7 py-3 rounded-full text-sm uppercase tracking-wider font-medium inline-flex items-center gap-2 hover:bg-red-accent hover:text-white transition-colors">
+          <button onClick={() => navigate({ to: "/about" })} className="border-2 border-red-accent text-red-accent px-7 py-3 rounded-full text-sm uppercase tracking-wider font-medium inline-flex items-center gap-2 hover:bg-red-accent hover:text-white transition-colors">
             About Us <ArrowRight className="w-4 h-4" />
           </button>
 

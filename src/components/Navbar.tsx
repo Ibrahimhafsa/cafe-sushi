@@ -1,20 +1,21 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, ShoppingBag, Menu as MenuIcon, X } from "lucide-react";
 import { scrollToId } from "@/lib/scroll";
 
-const links: Array<{ label: string; id: string }> = [
-  { label: "Home", id: "home" },
-  { label: "About", id: "about" },
-  { label: "Pages", id: "pages" },
+const links: Array<{ label: string; id: string; path?: string }> = [
+  { label: "Home", id: "home", path: "/" },
+  { label: "About", id: "about", path: "/about" },
+  { label: "Contact", id: "contact", path: "/contact" },
   { label: "Menu", id: "menu" },
-  { label: "Contact", id: "contact" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -22,9 +23,23 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNav = (id: string) => {
+  const handleNav = (l: (typeof links)[0]) => {
     setOpen(false);
-    scrollToId(id);
+    if (l.path) {
+      if (location.pathname === l.path) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        navigate({ to: l.path });
+      }
+    } else {
+      if (location.pathname !== "/") {
+        navigate({ to: "/" }).then(() => {
+          setTimeout(() => scrollToId(l.id), 100);
+        });
+      } else {
+        scrollToId(l.id);
+      }
+    }
   };
 
   return (
@@ -47,7 +62,7 @@ export function Navbar() {
         <ul className="hidden lg:flex items-center gap-10 text-white/90 text-sm uppercase tracking-wider">
           {links.map((l) => (
             <li key={l.label}>
-              <button onClick={() => handleNav(l.id)} className="hover:text-gold transition-colors">
+              <button onClick={() => handleNav(l)} className="hover:text-gold transition-colors">
                 {l.label}
               </button>
             </li>
@@ -62,7 +77,7 @@ export function Navbar() {
             <ShoppingBag className="w-5 h-5" />
             <span className="absolute -top-2 -right-2 bg-red-accent text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
           </button>
-          <button onClick={() => handleNav("contact")} className="btn-red px-6 py-2.5 rounded-full text-sm font-medium uppercase tracking-wide">
+          <button onClick={() => navigate({ to: "/reservation" })} className="btn-red px-6 py-2.5 rounded-full text-sm font-medium uppercase tracking-wide">
             Book Now
           </button>
         </div>
@@ -95,12 +110,12 @@ export function Navbar() {
               <button
                 key={l.label}
                 className="text-white text-3xl font-display"
-                onClick={() => handleNav(l.id)}
+                onClick={() => handleNav(l)}
               >
                 {l.label}
               </button>
             ))}
-            <button onClick={() => handleNav("contact")} className="btn-red px-8 py-3 rounded-full text-sm uppercase tracking-wide">
+            <button onClick={() => { setOpen(false); navigate({ to: "/reservation" }); }} className="btn-red px-8 py-3 rounded-full text-sm uppercase tracking-wide">
               Book Now
             </button>
           </motion.div>

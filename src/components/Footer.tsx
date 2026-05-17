@@ -1,6 +1,7 @@
 import { Instagram, Facebook, MapPin } from "lucide-react";
 import { CherrySVG } from "./Navbar";
 import { toast } from "sonner";
+import { Link } from "@tanstack/react-router";
 
 export function Footer() {
   const handleSubscribe = (e: React.FormEvent) => {
@@ -51,7 +52,11 @@ export function Footer() {
           <div>
             <h4 className="text-white font-display text-xl mb-4">Pages</h4>
             <ul className="space-y-2 text-sm">
-              {["Home", "About Us", "Menu", "Reservations", "Blog / Journal", "Gift Vouchers"].map((l) => (
+              <li><Link to="/" className="hover:text-gold transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-gold transition-colors">About Us</Link></li>
+              <li><Link to="/reservation" className="hover:text-gold transition-colors">Reservations</Link></li>
+              <li><Link to="/contact" className="hover:text-gold transition-colors">Contact</Link></li>
+              {["Menu", "Blog / Journal", "Gift Vouchers"].map((l) => (
                 <li key={l}><a href="#" className="hover:text-gold transition-colors">{l}</a></li>
               ))}
             </ul>
@@ -83,9 +88,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t-2 border-red-accent pt-6 flex flex-wrap justify-between gap-4 text-xs">
-          <p>© 2026 Cafe Sushi Ltd. All rights reserved.</p>
-          <p className="text-gold">Certified by the Japanese Cuisine Goodwill Ambassador</p>
+        <div className="border-t-2 border-red-accent pt-6 flex flex-wrap justify-between gap-4 text-md">
+          <p>
+             Powered by{" "}
+            <a 
+              href="https://axistechgroup.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-gold transition-colors"
+            >
+              Axistech Group
+            </a>
+          </p>
+          
         </div>
       </div>
     </footer>

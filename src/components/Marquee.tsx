@@ -1,11 +1,11 @@
 const items = [
-  { text: "TUNA", img: "https://images.unsplash.com/photo-1516684732162-798a0062be99?w=120" },
+  { text: "TUNA", img: "https://images.unsplash.com/photo-1562802378-063ec186a863?w=120" },
   { text: "MAKI ROLLS", img: "https://images.unsplash.com/photo-1562802378-063ec186a863?w=120" },
-  { text: "SUSHI TACOS", img: "https://images.unsplash.com/photo-1617196034096-2186592bdb7e?w=120" },
-  { text: "SALMON", img: "https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=120" },
+  { text: "SUSHI TACOS", img: "https://images.unsplash.com/photo-1534482421-64566f976cfa?w=120" },
+  { text: "SALMON", img: "https://images.unsplash.com/photo-1562802378-063ec186a863?w=120" },
   { text: "SUSHI BURRITOS", img: "https://images.unsplash.com/photo-1563612116625-3012372fccce?w=120" },
   { text: "NIGIRI", img: "https://images.unsplash.com/photo-1534482421-64566f976cfa?w=120" },
-  { text: "TEMPURA", img: "https://images.unsplash.com/photo-1617196034100-8e2a83a04a12?w=120" },
+  { text: "TEMPURA", img: "https://images.unsplash.com/photo-1563612116625-3012372fccce?w=120" },
 ];
 
 export function Marquee() {

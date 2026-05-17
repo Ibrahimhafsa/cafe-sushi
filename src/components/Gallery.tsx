@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Eye } from "lucide-react";
 
 const photos = [
-  "https://images.unsplash.com/photo-1617196034096-2186592bdb7e?w=600",
+  "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1600",
   "https://images.unsplash.com/photo-1562802378-063ec186a863?w=600",
   "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600",
   "https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=600",

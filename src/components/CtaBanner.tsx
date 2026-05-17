@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { scrollToId } from "@/lib/scroll";
+import { useNavigate } from "@tanstack/react-router";
 
 export function CtaBanner() {
+  const navigate = useNavigate();
+
   return (
     <section className="relative py-32 lg:py-40 overflow-hidden">
       <div
@@ -38,7 +40,7 @@ export function CtaBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-70px" }}
           transition={{ delay: 0.5 }}
-          onClick={() => scrollToId("contact")}
+          onClick={() => navigate({ to: "/reservation" })}
           className="btn-red mt-10 px-10 py-4 rounded-full text-base uppercase tracking-wider font-medium"
         >
           Make a Reservation
