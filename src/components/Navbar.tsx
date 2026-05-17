@@ -2,6 +2,15 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, ShoppingBag, Menu as MenuIcon, X } from "lucide-react";
+import { scrollToId } from "@/lib/scroll";
+
+const links: Array<{ label: string; id: string }> = [
+  { label: "Home", id: "home" },
+  { label: "About", id: "about" },
+  { label: "Pages", id: "pages" },
+  { label: "Menu", id: "menu" },
+  { label: "Contact", id: "contact" },
+];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -13,7 +22,10 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = ["Home", "About", "Pages", "Menu", "Contact"];
+  const handleNav = (id: string) => {
+    setOpen(false);
+    scrollToId(id);
+  };
 
   return (
     <motion.nav
@@ -29,13 +41,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 text-white">
           <CherrySVG className="w-7 h-7 text-red-accent" />
-          <span className="font-display italic text-2xl">Sakura House</span>
+          <span className="font-display italic text-2xl">Cafe Sushi</span>
         </Link>
 
         <ul className="hidden lg:flex items-center gap-10 text-white/90 text-sm uppercase tracking-wider">
           {links.map((l) => (
-            <li key={l}>
-              <a href="#" className="hover:text-gold transition-colors">{l}</a>
+            <li key={l.label}>
+              <button onClick={() => handleNav(l.id)} className="hover:text-gold transition-colors">
+                {l.label}
+              </button>
             </li>
           ))}
         </ul>
@@ -48,7 +62,7 @@ export function Navbar() {
             <ShoppingBag className="w-5 h-5" />
             <span className="absolute -top-2 -right-2 bg-red-accent text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
           </button>
-          <button className="btn-red px-6 py-2.5 rounded-full text-sm font-medium uppercase tracking-wide">
+          <button onClick={() => handleNav("contact")} className="btn-red px-6 py-2.5 rounded-full text-sm font-medium uppercase tracking-wide">
             Book Now
           </button>
         </div>
@@ -78,16 +92,15 @@ export function Navbar() {
               <X className="w-8 h-8" />
             </button>
             {links.map((l) => (
-              <a
-                key={l}
-                href="#"
+              <button
+                key={l.label}
                 className="text-white text-3xl font-display"
-                onClick={() => setOpen(false)}
+                onClick={() => handleNav(l.id)}
               >
-                {l}
-              </a>
+                {l.label}
+              </button>
             ))}
-            <button className="btn-red px-8 py-3 rounded-full text-sm uppercase tracking-wide">
+            <button onClick={() => handleNav("contact")} className="btn-red px-8 py-3 rounded-full text-sm uppercase tracking-wide">
               Book Now
             </button>
           </motion.div>
