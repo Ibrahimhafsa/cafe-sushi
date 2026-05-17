@@ -16,7 +16,7 @@ const posts = [
     cat: "Fusion",
     title: "Creative Sushi Fusion Recipes That Are Redefining the Roll",
     excerpt:
-      "Our head chef explores the growing fusion trend and shares the thinking behind Sakura House's most innovative new dishes.",
+      "Our head chef explores the growing fusion trend and shares the thinking behind Cafe Sushi's most innovative new dishes.",
   },
   {
     img: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600",
