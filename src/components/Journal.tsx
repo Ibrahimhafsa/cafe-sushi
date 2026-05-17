@@ -70,9 +70,12 @@ export function Journal() {
                 </div>
                 <h3 className="font-display text-xl text-ink leading-snug mb-3">{p.title}</h3>
                 <p className="text-sm text-muted-ink leading-relaxed mb-5">{p.excerpt}</p>
-                <a href="#" className="text-red-accent font-medium inline-flex items-center gap-2 text-sm">
+                <button
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  className="text-red-accent font-medium inline-flex items-center gap-2 text-sm"
+                >
                   Read More <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </motion.article>
           ))}
