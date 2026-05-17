@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 const dishes = [
   { name: "Rainbow Roll", desc: "Crab, avocado, cucumber topped with tuna, salmon, and yellowtail", price: "£14.50", img: "https://images.unsplash.com/photo-1617196034096-2186592bdb7e?w=600" },
@@ -11,7 +12,7 @@ const dishes = [
 
 export function PopularDelights() {
   return (
-    <section className="bg-cream py-24 lg:py-32">
+    <section id="menu" className="bg-cream py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +50,14 @@ export function PopularDelights() {
                   <span className="text-red-accent font-display text-xl">{d.price}</span>
                 </div>
                 <p className="text-muted-ink text-sm leading-relaxed mb-4">{d.desc}</p>
-                <button className="opacity-0 group-hover:opacity-100 transition-opacity btn-red px-5 py-2 rounded-full text-xs uppercase tracking-wider">
+                <button
+                  onClick={() =>
+                    toast.success("Added to cart!", {
+                      style: { background: "#D62828", color: "#fff", border: "none" },
+                    })
+                  }
+                  className="opacity-0 group-hover:opacity-100 transition-opacity btn-red px-5 py-2 rounded-full text-xs uppercase tracking-wider"
+                >
                   Add to Cart
                 </button>
               </div>

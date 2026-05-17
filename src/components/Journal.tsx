@@ -16,7 +16,7 @@ const posts = [
     cat: "Fusion",
     title: "Creative Sushi Fusion Recipes That Are Redefining the Roll",
     excerpt:
-      "Our head chef explores the growing fusion trend and shares the thinking behind Sakura House's most innovative new dishes.",
+      "Our head chef explores the growing fusion trend and shares the thinking behind Cafe Sushi's most innovative new dishes.",
   },
   {
     img: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600",
@@ -30,16 +30,22 @@ const posts = [
 
 export function Journal() {
   return (
-    <section className="bg-parchment py-24 lg:py-32">
+    <section id="journal" className="bg-parchment py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-wrap justify-between items-end mb-14 gap-6">
           <div>
             <p className="font-jp italic text-gold mb-3">私たちの物語</p>
             <h2 className="font-display text-4xl md:text-5xl text-ink">Our Sushi Journal</h2>
           </div>
-          <a href="#" className="text-red-accent font-medium inline-flex items-center gap-2 uppercase text-sm tracking-wider">
+          <button
+            onClick={() => {
+              const el = document.getElementById("journal");
+              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+            className="text-red-accent font-medium inline-flex items-center gap-2 uppercase text-sm tracking-wider"
+          >
             More Articles <ArrowRight className="w-4 h-4" />
-          </a>
+          </button>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -64,9 +70,12 @@ export function Journal() {
                 </div>
                 <h3 className="font-display text-xl text-ink leading-snug mb-3">{p.title}</h3>
                 <p className="text-sm text-muted-ink leading-relaxed mb-5">{p.excerpt}</p>
-                <a href="#" className="text-red-accent font-medium inline-flex items-center gap-2 text-sm">
+                <button
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  className="text-red-accent font-medium inline-flex items-center gap-2 text-sm"
+                >
                   Read More <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </motion.article>
           ))}

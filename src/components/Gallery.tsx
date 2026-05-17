@@ -12,6 +12,7 @@ const photos = [
 export function Gallery() {
   return (
     <motion.section
+      id="pages"
       initial={{ opacity: 0, x: 80 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-70px" }}

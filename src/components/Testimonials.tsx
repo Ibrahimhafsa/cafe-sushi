@@ -6,7 +6,7 @@ const testimonials = [
   {
     photo: "https://i.pravatar.cc/500?img=33",
     quote:
-      "Sakura House is genuinely the best sushi I have had outside of Japan. The fish is always fresh, the rolls are beautifully presented, and the service is warm without being overbearing. We come every month.",
+      "Cafe Sushi is genuinely the best sushi I have had outside of Japan. The fish is always fresh, the rolls are beautifully presented, and the service is warm without being overbearing. We come every month.",
     name: "David Okafor",
     location: "Shoreditch, London",
   },
@@ -20,7 +20,7 @@ const testimonials = [
   {
     photo: "https://i.pravatar.cc/500?img=12",
     quote:
-      "As someone who has lived in Tokyo, I was sceptical about London sushi. Sakura House completely changed my mind. The quality and care that goes into every dish is remarkable. This place deserves every star it gets.",
+      "As someone who has lived in Tokyo, I was sceptical about London sushi. Cafe Sushi completely changed my mind. The quality and care that goes into every dish is remarkable. This place deserves every star it gets.",
     name: "James W.",
     location: "Notting Hill, London",
   },

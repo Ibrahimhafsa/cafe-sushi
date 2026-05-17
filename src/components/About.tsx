@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { scrollToId } from "@/lib/scroll";
 
 export function About() {
   return (
-    <section className="bg-cream py-24 lg:py-32 relative overflow-hidden">
+    <section id="about" className="bg-cream py-24 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 wave-pattern pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center relative">
         <motion.div
@@ -37,12 +38,12 @@ export function About() {
             crafted with precision, authenticity, and a modern touch.
           </p>
           <p className="text-muted-ink leading-relaxed mb-8">
-            At Sakura House, every roll is made fresh to order using the highest
+            At Cafe Sushi, every roll is made fresh to order using the highest
             quality fish sourced daily from Billingsgate Market. We are inspired by
             the rich culinary traditions of Japan, adapted for London dining at its
             very best.
           </p>
-          <button className="border-2 border-red-accent text-red-accent px-7 py-3 rounded-full text-sm uppercase tracking-wider font-medium inline-flex items-center gap-2 hover:bg-red-accent hover:text-white transition-colors">
+          <button onClick={() => scrollToId("about")} className="border-2 border-red-accent text-red-accent px-7 py-3 rounded-full text-sm uppercase tracking-wider font-medium inline-flex items-center gap-2 hover:bg-red-accent hover:text-white transition-colors">
             About Us <ArrowRight className="w-4 h-4" />
           </button>
 
