@@ -12,7 +12,7 @@ const dishes = [
 
 export function PopularDelights() {
   return (
-    <section className="bg-cream py-24 lg:py-32">
+    <section id="menu" className="bg-cream py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
