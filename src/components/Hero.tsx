@@ -73,7 +73,7 @@ export function Hero() {
           transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
           className="mt-10"
         >
-          <button className="btn-red px-10 py-4 rounded-full text-base font-medium uppercase tracking-wider inline-flex items-center gap-3">
+          <button onClick={() => scrollToId("menu")} className="btn-red px-10 py-4 rounded-full text-base font-medium uppercase tracking-wider inline-flex items-center gap-3">
             Order Now <ArrowRight className="w-4 h-4" />
           </button>
         </motion.div>
