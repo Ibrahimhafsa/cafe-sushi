@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { scrollToId } from "@/lib/scroll";
 
 export function CtaBanner() {
   return (
