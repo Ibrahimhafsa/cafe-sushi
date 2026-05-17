@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { scrollToId } from "@/lib/scroll";
 
 export function About() {
   return (
-    <section className="bg-cream py-24 lg:py-32 relative overflow-hidden">
+    <section id="about" className="bg-cream py-24 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 wave-pattern pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center relative">
         <motion.div
