@@ -43,7 +43,7 @@ export function About() {
             the rich culinary traditions of Japan, adapted for London dining at its
             very best.
           </p>
-          <button className="border-2 border-red-accent text-red-accent px-7 py-3 rounded-full text-sm uppercase tracking-wider font-medium inline-flex items-center gap-2 hover:bg-red-accent hover:text-white transition-colors">
+          <button onClick={() => scrollToId("about")} className="border-2 border-red-accent text-red-accent px-7 py-3 rounded-full text-sm uppercase tracking-wider font-medium inline-flex items-center gap-2 hover:bg-red-accent hover:text-white transition-colors">
             About Us <ArrowRight className="w-4 h-4" />
           </button>
 
