@@ -38,6 +38,7 @@ export function CtaBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-70px" }}
           transition={{ delay: 0.5 }}
+          onClick={() => scrollToId("contact")}
           className="btn-red mt-10 px-10 py-4 rounded-full text-base uppercase tracking-wider font-medium"
         >
           Make a Reservation
