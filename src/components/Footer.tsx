@@ -90,15 +90,8 @@ export function Footer() {
 
         <div className="border-t-2 border-red-accent pt-6 flex flex-wrap justify-between gap-4 text-md">
           <p>
-             Powered by{" "}
-            <a 
-              href="https://axistechgroup.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-gold transition-colors"
-            >
-              Axistech Group
-            </a>
+             cafesushi.co
+            
           </p>
           
         </div>
